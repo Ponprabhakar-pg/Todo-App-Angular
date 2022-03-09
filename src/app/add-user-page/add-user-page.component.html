@@ -1,0 +1,33 @@
+<!-- Card that contains input fields to get input from user -->
+<mat-card class="card">
+  <mat-card-header
+    style="
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      min-width: 300px;
+    "
+  >
+    Add User<br />
+  </mat-card-header>
+  <form (submit)="this._accessDataStore.addUser(userName.value)">
+  <mat-card-content>
+    <mat-form-field appearance="outline" style="min-width: 300px">
+      <mat-label>Username:</mat-label>
+      <input matInput #userName style="min-width: 280px"/> 
+    </mat-form-field>
+      <br />
+    
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button
+      type="submit"
+      mat-flat-button
+      style="background-color: #002b5c; color: #fff"
+    >
+      <mat-icon>add</mat-icon> Add User
+    </button>
+  </mat-card-actions>
+</form>
+</mat-card>

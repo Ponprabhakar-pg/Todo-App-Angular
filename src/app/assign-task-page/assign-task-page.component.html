@@ -1,0 +1,32 @@
+<!-- Card that contains input fields to get input from user -->
+<mat-card class="card">
+  <mat-card-header style="font-size: 20px; font-weight: bold; min-width: 300px">
+    Assign New Task<br />
+  </mat-card-header>
+  <form (submit)=" this._accessDataStore.assignTask(userName.value,taskAssigned.value);">
+  <mat-card-content>
+    <mat-form-field appearance="outline" style="min-width: 300px">
+      <mat-label>Select</mat-label>
+      <mat-select #userName style="min-width: 280px">
+        <mat-option *ngFor="let user of  this._accessDataStore.getTodoUserList()" value="{{ user }}">{{
+          user
+        }}</mat-option>
+      </mat-select> </mat-form-field
+    ><br />
+    <mat-form-field appearance="outline" style="min-width: 300px">
+      <mat-label>Task:</mat-label>
+      <textarea #taskAssigned matInput style="min-width: 280px"></textarea>
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button
+      mat-flat-button
+      type="submit"
+      style="background-color: #002b5c; color: #fff"
+    >
+      <mat-icon>add</mat-icon> Assign
+    </button>
+  </mat-card-actions>
+  </form>
+</mat-card>

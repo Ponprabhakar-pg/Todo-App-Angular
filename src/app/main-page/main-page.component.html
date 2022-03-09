@@ -1,0 +1,59 @@
+<!-- Grid Displaying three cards for adding user, assigning task and viewing todo list -->
+<mat-grid-list cols="4" rowHeight="400px" style="background-color: #cfe4f9">
+  <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-card class="card">
+      <img
+        mat-card-image
+        src="../../assets/AddUser.svg"
+        alt="Photo Representing Adding User"
+      />
+      <mat-card-actions align="end">
+        <button
+          routerLink="addUser"
+          mat-flat-button
+          style="background-color: #002b5c; color: #fff"
+        >
+          <mat-icon>person</mat-icon> Add User
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-card class="card">
+      <img
+        mat-card-image
+        src="../../assets/AddTask.svg"
+        alt="Photo Representing Adding Task"
+      />
+      <mat-card-actions align="end">
+        <button
+          routerLink="assignTask"
+          mat-flat-button
+          style="background-color: #002b5c; color: #fff"
+        >
+          <mat-icon>add</mat-icon> Assign Task
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-card class="card">
+      <img
+        mat-card-image
+        src="../../assets/ViewList.svg"
+        alt="Photo Representing Viewing Todo List"
+      />
+      <mat-card-actions align="end">
+        <button
+          routerLink="viewTask"
+          mat-flat-button
+          style="background-color: #002b5c; color: #fff"
+        >
+          <mat-icon>list</mat-icon> View Task
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+</mat-grid-list>

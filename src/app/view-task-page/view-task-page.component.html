@@ -1,0 +1,51 @@
+<!-- Table to display Todo List Data -->
+<mat-card class="card" style="box-shadow: none">
+  <mat-card-header
+    style="
+      font-size: 20px;
+      font-weight: bold;
+      justify-content: center;
+      min-width: 300px;
+      max-height: 90%;
+    "
+  >
+    Todo Task List<br />
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="container mat-elevation-z8" style="box-shadow: none">
+      <table style="text-align: center;">
+        <thead>
+          <tr>
+              <th>Username</th>
+              <th>Task(s)</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of this._accessDataStore.getTodoData()">
+              <td class="cellBorder">{{ todo.userName }}</td>
+              <td class="cellBorder"><ol>
+                <tr *ngFor="let task of todo.taskAssigned">
+                  <li>
+                    <td>{{task}} 
+                      <button (click)="this._accessDataStore.redirectToEditTask(todo.userName,task)" mat-icon-button style="color: #002b5c; padding-left: 15px;">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button (click)="this._accessDataStore.deleteTask(todo.userName,task)" mat-icon-button style="color: #002b5c; padding-left: 15px;">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </li>
+                </tr></ol></td>
+              <td class="cellBorder rightBorder">
+                <button (click)="this._accessDataStore.deleteUser(todo.userName)" mat-mini-fab style="background-color: #002b5c; color: #fff">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+          </tr>         
+      </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
